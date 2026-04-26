@@ -1,4 +1,5 @@
 from datetime import datetime
+from typing import Optional
 from pydantic import BaseModel, Field
 
 
@@ -16,6 +17,6 @@ class CommentOut(BaseModel):
     task_id: int
     author_id: int
     created_at: datetime
-    updated_at: datetime | None = None
+    updated_at: Optional[datetime] = None
 
     model_config = {"from_attributes": True}

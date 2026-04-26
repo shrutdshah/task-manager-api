@@ -45,3 +45,4 @@ class Task(Base):
     updated_at = Column(DateTime(timezone=True), onupdate=func.now())
 
     comments = relationship("Comment", back_populates="task", cascade="all, delete-orphan")
+    labels = relationship("Label", secondary="task_labels", back_populates="tasks")
