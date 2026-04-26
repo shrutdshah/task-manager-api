@@ -43,3 +43,5 @@ class Task(Base):
 
     created_at = Column(DateTime(timezone=True), server_default=func.now())
     updated_at = Column(DateTime(timezone=True), onupdate=func.now())
+
+    comments = relationship("Comment", back_populates="task", cascade="all, delete-orphan")
